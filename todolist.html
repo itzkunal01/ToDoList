@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .box {
+            background-repeat: no-repeat;
+            /* linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%); */
+            background-image: linear-gradient(pink, rgb(255, 255, 227), rgba(255, 0, 0, 0.561));
+        }
+
+        h1 {
+            background-color: #fe6055be;
+        }
+
+        /* .bg-color {
+            background-color: cadetblue;
+        } */
+
+        .box {
+            width: 50%;
+            border: 0px solid rgb(206, 206, 206);
+            border-radius: 14px;
+        }
+
+        .border-2 {
+            border: 2px solid salmon !important;
+        }
+
+        .br-2px {
+            border-radius: 14px !important;
+        }
+
+        button:focus {
+            box-shadow: none !important;
+        }
+
+        .b-none {
+            border: none;
+            background-color: antiquewhite;
+        }
+
+        input:focus-visible {
+            outline: none;
+        }
+
+        /* .bg-color-sandybrow {
+            background-color: sandybrown;
+        } */
+
+        .bg:hover {
+            background-color: salmon !important;
+            color: white !important;
+        }
+
+        .todolist {
+            border-radius: 14px;
+        }
+
+        .box2 {
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner text-center my-5">
+        <div class="box p-2 mx-auto">
+            <h1 class="text-center todolist text-white">To do list</h1>
+            <div class="box2 d-flex">
+                <input type="text" onfocus="this.value=''" placeholder="enter your list"
+                    class="text d-block br-2px px-4 py-2 b-none">
+                <button type="submit" class="btn d-block rounded-pill border-2 px-4 bg" onclick="add()">Add </button>
+            </div>
+            <ol class="order_list  bg-color-sandybrow "></ol>
+        </div>
+    </div>
+    <script>
+        function add() {
+            const order = document.querySelector(".order_list");
+            const list = document.createElement("li");
+            const span = document.createElement("span")
+            const button = document.createElement("button")
+            const text = document.querySelector(".text");
+            button.textContent = "Delete"
+            list.classList.add("bg-color")
+            order.appendChild(list);
+            list.appendChild(span);
+            list.appendChild(button)
+            list.style.textAlign = "left"
+            button.style.float = "right"
+            list.style.marginTop = "15px"
+            span.textContent = text.value; // text in span
+            text.value = ''; //input field empty
+            text.focus() //cursor input m he rhe
+
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
